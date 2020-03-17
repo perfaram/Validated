@@ -127,7 +127,7 @@ Validated is available via **Swift Package Manager**.
 
 Add the Validated package to the dependencies within your application’s `Package.swift` file.  Substitute `"x.x.x"` with the latest Validated [release](https://github.com/perfaram/Validated/releases).
 ```swift
-.package(url: "https://github.com/perfaram/Validated.git")
+.package(url: "https://github.com/perfaram/Validated.git", from: "x.x.x")
 ```
 Add Validated to your target's dependencies:
 ```swift
