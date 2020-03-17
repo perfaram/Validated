@@ -18,7 +18,7 @@ struct EmptyStringValidator: Validator {
 
 struct AllCapsLatinStringValidator: Validator {
     static func validate(_ value: String) -> Bool {
-        return value.characters.reduce(true) { accumulator, character in
+        return value.reduce(true) { accumulator, character in
             return accumulator && ("A"..."Z").contains(character)
         }
     }
@@ -26,7 +26,7 @@ struct AllCapsLatinStringValidator: Validator {
 
 struct ContainsYorZ: Validator {
     static func validate(_ value: String) -> Bool {
-        return value.characters.reduce(false) { accumulator, character in
+        return value.reduce(false) { accumulator, character in
             return accumulator || ("Y"..."Z").contains(character)
         }
     }

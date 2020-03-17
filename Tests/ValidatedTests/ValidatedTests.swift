@@ -1,11 +1,11 @@
 import XCTest
-import Validated
+@testable import Validated
 
 /**
  The following tests use multiple example validators to ensure that invalid values
  cannot be constructed, while valid ones can be.
 */
-class ValidatedTests: XCTestCase {
+final class ValidatedTests: XCTestCase {
 
     // MARK: Basic Validate Tests
 
@@ -199,4 +199,19 @@ class ValidatedTests: XCTestCase {
         let valueValidated = try! NonEmptyString("This is OK.").value
         XCTAssertEqual(valueValidated, "This is OK.")
     }
+    
+    static var allTests = [
+        ("testValidatesEmptyString", testValidatesEmptyString),
+        ("testValidatesAnyEmptyCollection", testValidatesAnyEmptyCollection),
+        ("testSumLarger20", testSumLarger20),
+        ("testValidatesCountGreater10", testValidatesCountGreater10),
+        ("testValidatesLoggedInUser", testValidatesLoggedInUser),
+        ("testValidatesEmptyStringAndAllCaps1", testValidatesEmptyStringAndAllCaps1),
+        ("testValidatesCountGreater10AndSumLarger20", testValidatesCountGreater10AndSumLarger20),
+        ("testValidatesEmptyStringAndAllCapsContainsYorZ", testValidatesEmptyStringAndAllCapsContainsYorZ),
+        ("testValidatesEmptyStringAndAllCaps2", testValidatesEmptyStringAndAllCaps2),
+        ("testValidatesEmptyStringOrAllCaps", testValidatesEmptyStringOrAllCaps),
+        ("testValidatesNonEmpty", testValidatesNonEmpty),
+        ("testThrowingInitializer", testThrowingInitializer),
+    ]
 }

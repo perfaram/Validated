@@ -1,5 +1,5 @@
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Validated.svg?style=flat-square)](https://cocoapods.org/pods/Validated) [![Platform support](https://img.shields.io/badge/platform-ios%20%7C%20osx%20%7C%20tvos%20%7C%20watchos-lightgrey.svg?style=flat-square)](https://github.com/Ben-G/Validated/blob/master/LICENSE.md)[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/Ben-G/Validated/blob/master/LICENSE.md)
-
+[![Swift Package Manager compatible](https://img.shields.io/badge/SwiftPM-compatible-orange.svg?style=flat)](https://github.com/perfaram/Validated/blob/master/Package.swift) ![Swift version 5.0](https://img.shields.io/badge/Swift-5.0-F16D39?style=flat&logo=swift) [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/perfaram/Validated/blob/master/LICENSE.md)
+ 
 # Validated
 
 Validated is a μ-library (~50 Source Lines of Code) that allows you make better use of Swift's type system by providing tools for easily generating new types with built-in guarantees.
@@ -101,7 +101,7 @@ However, when using this validator to create a type, you will have to specify th
 typealias NonEmptyListOfStrings = Validated<[String], NonEmptyCollectionValidator<[String]>>
 ```
 
-# Does this Library Enable Dependent Types?
+## Does this Library Enable Dependent Types?
 
 No, not really. Dependent types would allow us to define types, solely based on values. This library only allows us to validate if a type is of a specified type `<T>` based on its value and a validator. The value itself doesn't change the type information. 
 
@@ -119,30 +119,26 @@ ListOf3([1,2,3,4]) // type = nil
 
 However, these statically provided checks can still add a lot of value to your code; see the examples above.
 
-# Installation
+## Installation
 
-Validated is available via the usual suspects.
+Validated is available via **Swift Package Manager**.
 
-## CocoaPods
+#### Add dependencies
 
-You can install Validated via CocoaPods by adding it to your `Podfile`:
+Add the Validated package to the dependencies within your application’s `Package.swift` file.  Substitute `"x.x.x"` with the latest Validated [release](https://github.com/perfaram/Validated/releases).
+```swift
+.package(url: "https://github.com/perfaram/Validated.git")
+```
+Add Validated to your target's dependencies:
+```swift
+.target(name: "example", dependencies: ["Validated"]),
+```
 
-	use_frameworks!
+#### Import package
+```swift
+import Validated
+```
 
-	source 'https://github.com/CocoaPods/Specs.git'
-	platform :ios, '8.0'
-	
-	pod 'Validated'
+## Get in touch
 
-And run `pod install`.
-
-## Carthage
-
-You can install Validated via Carthage by adding the following line to your Cartfile:
-
-    github "Ben-G/Validated"
-
-
-# Get in touch
-
-If you have any questions, you can find me on twitter [@benjaminencz](https://twitter.com/benjaminencz).
+If you have any questions, you can post an [Issue](https://github.com/perfaram/Validated/issues) – or find the original author on Twitter [@benjaminencz](https://twitter.com/benjaminencz).

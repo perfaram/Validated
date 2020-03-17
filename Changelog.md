@@ -1,4 +1,11 @@
-# 3.0.0
+#3.0.1
+
+*Released: 03/17/2020*
+
+- "Migrated" to Swift 5.0 (no actual changes to source) - @perfaram
+- Switch to SPM - @perfaram
+
+#3.0.0
 
 *Released: 10/10/2016*
 
